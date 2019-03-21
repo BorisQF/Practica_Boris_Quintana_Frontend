@@ -3,7 +3,7 @@
 }
 
 .tabsItem a{
-    color: gray;
+    color: rgb(190, 190, 190);
     background-color: transparent !important;
 }
 
@@ -12,10 +12,48 @@
     border-bottom: solid green;
 }
 
-.noPadding{
-    padding: 0;
+.colContent{
+    background-color: #f1f5f9;
+
 }
 
-.NoMargin{
-    margin: 0;
+.rowMarginTop{
+    margin-top: 3% !important;
+}
+
+.cardMargin{
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.filterListGroup{
+    border-radius: 0%;
+    font-size: 14px;
+}
+
+.expIcon{
+    width: 10px;
+}
+
+.listGroupItem{
+    padding: 0 !important;
+}
+
+.expPanel{
+    border-radius: 0% !important;
+}
+
+.typeFont{
+    font-weight: bold !important;
+    color: rgb(100, 100, 100) !important;
+}
+
+.MuiExpansionPanelDetails-root-100 {
+    padding: 0px 10px 24px !important; 
+}
+
+.vMore{
+    color: #1a5796;
 }

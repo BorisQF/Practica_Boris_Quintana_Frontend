@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Dropdown, Container, Row, Col, InputGroup, FormControl} from 'react-bootstrap';
-import Lupa from './../../assets/Lupa.png';
+import sIcon from './../../assets/search_icon.png';
 import './styless.css'
 
 class MiddleBar extends Component {
@@ -43,11 +43,11 @@ class MiddleBar extends Component {
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
                         <InputGroup.Text id="inputGroup-sizing-default" className="inputFinder">
-                            <img src={Lupa} alt="" className="lupa"/>
+                            <img src={sIcon} alt="" className="sIcon"/>
                         </InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl
-                    placeholder="Username"
+                    placeholder="Search courses and providers"
                     aria-label="Default"
                     aria-describedby="inputGroup-sizing-default" 
                     className="inputFinder"

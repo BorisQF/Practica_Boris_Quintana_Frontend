@@ -5,7 +5,7 @@ import logo from './../../assets/logo.svg';
 import './styless.css';
 
 const NavBar = () => (
-    <Navbar  bg="light" expand="lg">
+    <Navbar  bg="light" expand="lg" className="justify-content-md-center">
         <Toolbar className={"appBar"}>
             <Navbar.Brand href="#" ><img src={logo} alt="Logo" /></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
