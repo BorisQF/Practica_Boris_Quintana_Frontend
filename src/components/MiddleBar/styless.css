@@ -1,0 +1,26 @@
+.containerMiddleBar{
+    background-color: #1a5796 !important;
+    text-align: center !important;
+    color: white !important;
+    padding: 1% !important;
+}
+
+.dropButton{
+    background-color: #1a5796;
+    border-color: #ffffff;
+    margin-bottom: 1%;
+}
+
+.inputFinder{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.lupa{
+    width: 15px;
+}
+
+.rowMargin{
+    margin-top: 1%;
+}
+

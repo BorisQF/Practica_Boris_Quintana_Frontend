@@ -1,0 +1,21 @@
+.colTabs{
+    background-color: #1a5796 !important;
+}
+
+.tabsItem a{
+    color: gray;
+    background-color: transparent !important;
+}
+
+.tabsItem .active{
+    border: none;
+    border-bottom: solid green;
+}
+
+.noPadding{
+    padding: 0;
+}
+
+.NoMargin{
+    margin: 0;
+}

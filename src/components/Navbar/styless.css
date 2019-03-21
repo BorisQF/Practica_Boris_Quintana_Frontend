@@ -1,0 +1,31 @@
+.appBar {
+    margin: auto !important;
+    margin-left: 15% !important;
+}
+
+.navBar{
+    margin-left: 5% !important;   
+}
+
+.browseCourses{
+    width: 165px !important;
+    color: #218838 !important;
+}
+
+.buttonSignIn{
+    margin:0 !important;
+    margin-left: 7% !important;
+    margin-top: 1% !important;
+    border-style: solid !important;
+    border-width: 1px;
+    width: 100px !important;
+    padding: 0 !important;
+}
+.buttonTrial{
+    margin:0 !important;
+    margin-left: 3% !important;
+    margin-top: 1% !important;
+    width: 150px !important;
+    padding: 0 !important;
+    font-weight: bold !important;
+}
