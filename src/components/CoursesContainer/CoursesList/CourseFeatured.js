@@ -6,37 +6,35 @@ import Typography from '@material-ui/core/Typography';
 import clock from './../../../assets/clock.png';
 import laptop from './../../../assets/laptop.png';
 import share from './../../../assets/share.png';
-import image from './../../../assets/Capture36.PNG';
 import './styless.css';
 
 const hola = '888.88';
 
-function CourseFeatured(props) {
+const CourseFeatured = ({name, totalHours, price, featuredBanner, providerName}) => {
   return (
     <Paper className="coursePaper">
         <Row>
             <Col sm={4}>
-              <img src={image} alt="imag" className="imgCourse"/>
+              <img src={`https://storage.cebroker.com/CEBroker/${featuredBanner}`} alt="imag" className="imgCourse"/>
             </Col>
             <Col sm={5} className="colTitle">
               <Typography className="courseTitle">
-                Preventing MEdical Errors Preventing MEdical Errors
+                {name}
               </Typography>
               <div className="featured">
                 FEATURED
               </div>
               <Typography color="textSecondary" className="courseContent">
-                Preventing MEdical Errors Preventing MEdical Errors
-                  Sorted by: 
+                {providerName} 
               </Typography>
               <Typography color="textSecondary" className="courseExtraInfo">
-                  <img src={clock} alt="clock" className="imgSize"/> {`${hola} Hours `} 
-                  <img src={laptop} alt="laptop" className="imgSize" /> {hola}
+                  <img src={clock} alt="clock" className="imgSize"/> {`${totalHours} Hours `} 
+                  <img src={laptop} alt="laptop" className="imgSize" /> {`Computer-Based Training`}
               </Typography>
             </Col>
             <Col sm={3} className="colTitle">
               <Typography className="titleCourse priceFont">
-                {`$ ${hola}`}
+                {price != null ? `$ ${price}` : `FREE`}
               </Typography>
               <Typography className="titleCourse priceFont">
                 <img src={share} alt="share" className="shareImg" />

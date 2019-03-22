@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Tab, Nav, Container, Row, Col} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import Filters from './Filters';
@@ -6,9 +6,8 @@ import CoursesList from './CoursesList';
 import './styless.css';
 
 
-class CoursesContainer extends Component {
+const CoursesContainer = ({courseSearch}) => {
 
-  render() {
     return (
       <Container fluid="false">
         <Row className="justify-content-md-center">
@@ -22,9 +21,9 @@ class CoursesContainer extends Component {
                     <Nav.Link eventKey="second" >PROVIDERS</Nav.Link>
                   </Nav.Item> 
                 </Nav>
-              </Col>
+              </Col> 
               <Col sm={12} className="colContent">
-                <Tab.Content>
+                <Tab.Content className="maxWidthTab">
                   <Tab.Pane eventKey="first">
                     <Row className="justify-content-md-center rowMarginTop">
                       <Col sm={12} lg={{ span: 10, offset: 1 }}>
@@ -36,7 +35,7 @@ class CoursesContainer extends Component {
                           </Col>
                           <Col sm={12} lg={7}>
                             <div className="cardMargin">
-                              <CoursesList></CoursesList>
+                              { courseSearch != null ? <CoursesList courseSearch={courseSearch} /> : null }
                             </div>
                           </Col>
                         </Row>
@@ -52,7 +51,7 @@ class CoursesContainer extends Component {
       </Container>
     )
   }
-}
+
 
 
 export default CoursesContainer;

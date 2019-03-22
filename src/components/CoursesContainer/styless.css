@@ -74,3 +74,8 @@
     color: #3a82c9;
     font-weight: bold;
 }
+
+.maxWidthTab{
+    max-width: 1400px !important;
+    margin: auto;
+  }

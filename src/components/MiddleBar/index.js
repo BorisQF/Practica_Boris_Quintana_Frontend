@@ -1,13 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Dropdown, Container, Row, Col, InputGroup, FormControl} from 'react-bootstrap';
 import sIcon from './../../assets/search_icon.png';
 import './styless.css'
 
-class MiddleBar extends Component {
-  render() {
+const MiddleBar = ({getCourseSearch}) => {
+
+
+    const setField = (e) => {
+        getCourseSearch(e.target.value);
+    }
+
     return (
       <Container fluid="false" className="containerMiddleBar">
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-md-center maxWidth">
             <Col sm={12} lg={"auto"}>
                 <h3>Find CE for a</h3>
             </Col>
@@ -38,7 +43,7 @@ class MiddleBar extends Component {
                 </Dropdown>
             </Col>
         </Row> 
-        <Row className="rowMargin">
+        <Row className="rowMargin maxWidth">
             <Col sm={12} lg={{ span: 6, offset: 3 }}>
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
@@ -47,6 +52,7 @@ class MiddleBar extends Component {
                         </InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl
+                    onChange={(e)=>setField(e)}
                     placeholder="Search courses and providers"
                     aria-label="Default"
                     aria-describedby="inputGroup-sizing-default" 
@@ -58,7 +64,7 @@ class MiddleBar extends Component {
       </Container>
     )
   }
-}
+
 
 export default MiddleBar;
 

@@ -6,12 +6,28 @@ import CoursesContainer from './components/CoursesContainer';
 
 
 class App extends Component {
+
+  constructor(){
+    super();
+    this.state = {
+      courseSearch: null
+    }
+  }
+  
+  getCourseSearch = (courseSearch) => {
+    this.setState({
+      courseSearch
+    });
+  }
+
   render() {
+    const { courseSearch } = this.state;
     return (
       <div>
         <NavBar />
-        <MiddleBar />
-        <CoursesContainer />
+        <MiddleBar getCourseSearch={this.getCourseSearch}/>
+        {courseSearch != null ? <CoursesContainer courseSearch={courseSearch}/> : <CoursesContainer /> }
+        
       </div>
     );
   }

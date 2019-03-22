@@ -8,28 +8,25 @@ import laptop from './../../../assets/laptop.png';
 import share from './../../../assets/share.png';
 import './styless.css';
 
-const hola = '888.88';
-
-function CourseFeatured(props) {
+const CourseFeatured = ({name, totalHours, price, deliveryMethod, providerName}) => {
     return (
 <Paper className="coursePaper">
         <Row>
             <Col sm={9} className="colTitle">
               <Typography className="courseDetailTitle">
-                Preventing MEdical Errors Preventing MEdical Errors
+                {name}
               </Typography>
               <Typography color="textSecondary" className="courseDetailContent">
-                Preventing MEdical Errors Preventing MEdical Errors
-                  Sorted by: 
+                {providerName} 
               </Typography>
               <Typography color="textSecondary" className="courseDetailExtraInfo">
-                  <img src={clock} alt="clock" className="imgSize"/> {`${hola} Hours `} 
-                  <img src={laptop} alt="laptop" className="imgSize" /> {hola}
+                  <img src={clock} alt="clock" className="imgSize"/> {`${totalHours} Hours `} 
+                  <img src={laptop} alt="laptop" className="imgSize" /> {deliveryMethod}
               </Typography>
             </Col>
             <Col sm={3} className="colTitle">
               <Typography className="titleCourse priceFont priceDetailFont">
-                {`$ ${hola}`}
+                {price != 0 ? `$ ${price}` : `FREE`}
               </Typography>
               <Typography className="titleCourse priceFont">
                 <img src={share} alt="share" className="shareDetailImg" />
