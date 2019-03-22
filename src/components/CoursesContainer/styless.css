@@ -53,7 +53,24 @@
 .MuiExpansionPanelDetails-root-100 {
     padding: 0px 10px 24px !important; 
 }
+.MuiFormControlLabel-root-107 {
+    padding: 0px !important; 
+    margin: 0px !important;
+}
+.MuiIconButton-root-81{
+    padding: 1px 10px 0 10px !important;
+}
 
+.MuiRadio-colorPrimary-116.MuiRadio-checked-114 {
+    color: #3a82c9 !important;
+}
+
+.alignEnd{
+    align-items: end !important;
+}
 .vMore{
-    color: #1a5796;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: #3a82c9;
+    font-weight: bold;
 }

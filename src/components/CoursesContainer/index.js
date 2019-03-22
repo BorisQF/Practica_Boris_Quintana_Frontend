@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import {Tab, Nav, Container, Row, Col, Card} from 'react-bootstrap';
+import {Tab, Nav, Container, Row, Col} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import Filters from './Filters';
+import CoursesList from './CoursesList';
 import './styless.css';
+
 
 class CoursesContainer extends Component {
 
@@ -34,7 +36,7 @@ class CoursesContainer extends Component {
                           </Col>
                           <Col sm={12} lg={7}>
                             <div className="cardMargin">
-                              <h1>hola2 Col8</h1>
+                              <CoursesList></CoursesList>
                             </div>
                           </Col>
                         </Row>

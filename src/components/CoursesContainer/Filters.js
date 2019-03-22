@@ -1,10 +1,14 @@
 import React from 'react';
-import { ListGroup, Form, Col } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 import sIcon from './../../assets/triangle_icon.png';
 import './styless.css';
 
@@ -19,114 +23,66 @@ const Filters = () => {
                     </Typography>
                 </ListGroup.Item>
                 <ListGroup.Item className="listGroupItem">
-                    <ExpansionPanel className="expPanel" defaultExpanded="true">
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} className="expPanelSummary">
+                    <ExpansionPanel className="expPanel" defaultExpanded={true}>
+                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
                         <Typography className="typeFont">Course type</Typography> 
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
-                            <Form.Group as={Col}>
-                                <Form.Check
-                                custom="false"
-                                type="radio"
-                                label="Self paced"
-                                name="formHorizontalRadios1"
-                                id="formHorizontalRadios1"
-                                />
-                                <Form.Check
-                                custom="false"
-                                type="radio"
-                                label="Live"
-                                name="formHorizontalRadios1"
-                                id="formHorizontalRadios2"
-                                />
-                                <div className="vMore">
-                                    view more
-                                </div>
-                            </Form.Group>
+                            <FormControl component="fieldset" >
+                                <RadioGroup
+                                    aria-label="Gender"
+                                    name="gender1"
+                                >
+                                    <FormControlLabel value="Self paced" control={<Radio color="primary"/>} label="Self paced" />
+                                    <FormControlLabel value="Live" control={<Radio color="primary" />} label="Live" />
+                                </RadioGroup>
+                            </FormControl>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
                 </ListGroup.Item>
                 <ListGroup.Item className="listGroupItem">
-                    <ExpansionPanel className="expPanel" defaultExpanded="true">
+                    <ExpansionPanel className="expPanel" defaultExpanded={true}>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography className="typeFont">Delivery type</Typography> 
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
-                            <Form.Group as={Col}>
-                                <Form.Check
-                                custom="false"
-                                type="radio"
-                                label="Any delivery type"
-                                name="formHorizontalRadios2"
-                                id="formHorizontalRadios3"
-                                />
-                                <Form.Check
-                                custom="false"
-                                type="radio"
-                                label="Computer-Based Training"
-                                name="formHorizontalRadios2"
-                                id="formHorizontalRadios4"
-                                />
-                                <Form.Check
-                                custom="false"
-                                type="radio"
-                                label="Correspondence"
-                                name="formHorizontalRadios2"
-                                id="formHorizontalRadios5"
-                                />
-                                <Form.Check
-                                custom="false"
-                                type="radio"
-                                label="Mailed Material"
-                                name="formHorizontalRadios2"
-                                id="formHorizontalRadios6"
-                                />
+                            <FormControl component="fieldset" >
+                                <RadioGroup
+                                    aria-label="Gender"
+                                    name="gender1"
+                                >
+                                    <FormControlLabel value="Any delivery type" control={<Radio color="primary"/>} label="Any delivery type" />
+                                    <FormControlLabel value="Computer-Based Training" control={<Radio color="primary" />} label="Computer-Based Training" />
+                                    <FormControlLabel value="Correspondence" control={<Radio color="primary" />} label="Correspondence" />
+                                    <FormControlLabel value="Mailed Material" control={<Radio color="primary" />} label="Mailed Material" />
+                                </RadioGroup>
                                 <div className="vMore">
                                     view more
                                 </div>
-                            </Form.Group>
+                            </FormControl>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
                 </ListGroup.Item>
                 <ListGroup.Item className="listGroupItem">
-                    <ExpansionPanel className="expPanel" defaultExpanded="true">
+                    <ExpansionPanel className="expPanel" defaultExpanded={true}>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography className="typeFont">Subject area</Typography> 
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
-                            <Form.Group as={Col} >
-                                <Form.Check
-                                custom="false"
-                                type="radio"
-                                label="Any subject area"
-                                name="formHorizontalRadios3"
-                                id="formHorizontalRadios7"
-                                />
-                                <Form.Check
-                                custom="false"
-                                type="radio"
-                                label="HIV/AIDS"
-                                name="formHorizontalRadios3"
-                                id="formHorizontalRadios8"
-                                />
-                                <Form.Check
-                                custom="false"
-                                type="radio"
-                                label="End-of-Life Care and Palliative Health Care"
-                                name="formHorizontalRadios3"
-                                id="formHorizontalRadios9"
-                                />
-                                <Form.Check
-                                custom="false"
-                                type="radio"
-                                label="Domestic Violence"
-                                name="formHorizontalRadios3"
-                                id="formHorizontalRadios10"
-                                />
+                            <FormControl component="fieldset" >
+                                <RadioGroup
+                                    aria-label="Gender"
+                                    name="gender1"
+                                >
+                                    <FormControlLabel value="Any subject area" control={<Radio color="primary"/>} label="Any subject area" />
+                                    <FormControlLabel value="HIV/AIDS" control={<Radio color="primary" />} label="HIV/AIDS" />
+                                    <FormControlLabel value="End-of-Life Care and Palliative Health Care" control={<Radio color="primary" />} label="End-of-Life Care and Palliative Health Care" className="alignEnd"/>
+                                    <FormControlLabel value="Domestic Violence" control={<Radio color="primary" />} label="Domestic Violence" />
+                                </RadioGroup>
                                 <div className="vMore">
                                     view more
                                 </div>
-                            </Form.Group>
+                            </FormControl>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
                 </ListGroup.Item>

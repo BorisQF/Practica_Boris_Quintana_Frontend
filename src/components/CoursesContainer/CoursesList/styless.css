@@ -1,0 +1,121 @@
+.divResult{
+    margin: 13px;
+    font-weight: bold;
+    color: rgb(100, 100, 100);
+    font-size: 14px;
+}
+
+.typography{
+    margin: 13px 0 !important;
+}
+
+.colFilter{
+    margin-right: 0% !important;
+    padding: 0% !important;
+}
+
+.buttonMargin{
+    margin: auto;
+    align-items: center;
+}
+
+.rowResulsAndSorted{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+.dropDown{
+    border: 1px solid #9c9c9c;
+    color: #9c9c9c;
+    font-size: 10px;
+}
+
+.coursePaper{
+    margin: 6px 13px;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.35) !important;
+    -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.35) !important;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.35) !important;
+    border-radius: 0 !important;
+}
+
+.imgCourse{
+    width: 100%;
+    margin: 13px;
+    padding: auto;
+}
+
+.colTitle{
+    margin-top: 13px !important;
+    margin-bottom: 13px !important;
+}
+
+.courseTitle{
+    font-weight: bold !important;
+}
+
+.courseDetailTitle{
+    margin: 13px 13px 0 13px !important;
+    font-weight: bold !important;
+}
+
+.featured{
+    font-size: 9px;
+    color: green;
+    border: 1px solid green;
+    width: 50px;
+    padding-left: 3px;
+    margin-top: 5px;
+}
+
+.courseContent{
+    margin-top: 6px !important;
+    color: #95b1b6 !important;
+}
+
+.courseDetailContent{
+    margin: 13px !important;
+    margin-top: 6px !important;
+    color: #95b1b6 !important;    
+}
+
+.courseExtraInfo{
+    margin-top: 15px !important;
+}
+
+.courseDetailExtraInfo{
+    margin: 5% 0 0 13px !important;
+}
+
+.imgSize{
+    width: 20px;
+}
+
+.priceFont{
+    text-align: right !important;
+    padding: 0 20px 0 0;
+    margin-top: 5px !important;
+    font-size: 18px !important;
+    color: #706f6f !important;
+    font-weight: bold !important;
+}
+
+.priceDetailFont{
+    margin-top: 13px !important;
+}
+
+.shareImg{
+    text-align: right !important;
+    margin-top: 50% !important;
+    margin-bottom: 13px !important;
+    border: 1px solid gray;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.shareDetailImg{
+    text-align: right !important;
+    margin-top: 30% !important;
+    margin-bottom: 13px !important;
+    border: 1px solid gray;
+    padding: 0 5px;
+    border-radius: 5px;
+}
