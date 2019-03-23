@@ -1,27 +1,30 @@
 .appBar {
     margin: auto !important;
-    width: 1100px;
+    width: 1250px;
 }
 
 .navBar{
-    margin-left: 5% !important;   
+    /* margin-left: 5% !important;    */
+    margin-left: 7% !important;
 }
 
 .browseCourses{
-    width: 165px !important;
+    width: 130px !important;
     color: #218838 !important;
 }
 
 .buttonSignIn{
     margin:0 !important;
-    margin-left: 7% !important;
     margin-top: 1% !important;
     border-style: solid !important;
     border-width: 1px;
+    border-radius: 0;
     width: 100px !important;
     padding: 0 !important;
+    height: 40px;
 }
 .buttonTrial{
+    border-radius: 0;
     margin:0 !important;
     margin-left: 3% !important;
     margin-top: 1% !important;
@@ -29,3 +32,18 @@
     padding: 0 !important;
     font-weight: bold !important;
 }
+
+.divDropDown{
+    display: flex;
+    flex-direction: row;
+}
+
+@media(max-width:991px){
+    .navBar{
+        margin-left: 3% !important;
+    }
+    .divDropDown{
+        flex-direction: column;
+    }
+}
+

@@ -4,6 +4,7 @@ import {Navbar, NavDropdown, Nav, Button} from 'react-bootstrap';
 import logo from './../../assets/logo.svg';
 import './styless.css';
 
+//Navbar component
 const NavBar = () => (
     <Navbar  bg="light" expand="lg" className="justify-content-md-center">
         <Toolbar className={"appBar"}>
@@ -22,9 +23,13 @@ const NavBar = () => (
                     </NavDropdown>
                     <Nav.Link href="#" className="browseCourses">Browse courses</Nav.Link>
                     <Nav.Link href="#">Support</Nav.Link>
+                    {/* <Button variant="outline-secondary" className="buttonSignIn">Sign in</Button>
+                    <Button variant="success" className="buttonTrial">7 day trial</Button> */}
+                </Nav>
+                <div className="divDropDown">
                     <Button variant="outline-secondary" className="buttonSignIn">Sign in</Button>
                     <Button variant="success" className="buttonTrial">7 day trial</Button>
-                </Nav>
+                </div>
             </Navbar.Collapse>
         </Toolbar>
     </Navbar>

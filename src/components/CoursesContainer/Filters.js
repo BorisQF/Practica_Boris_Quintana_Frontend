@@ -12,7 +12,7 @@ import FormControl from '@material-ui/core/FormControl';
 import sIcon from './../../assets/triangle_icon.png';
 import './styless.css';
 
-
+//Filters component
 const Filters = () => { 
     return (
         <div>
@@ -22,6 +22,7 @@ const Filters = () => {
                         <img src={sIcon} alt="sIcon" className="expIcon"/> FILTER COURSE RESULTS
                     </Typography>
                 </ListGroup.Item>
+                {/* Filter course type */}
                 <ListGroup.Item className="listGroupItem">
                     <ExpansionPanel className="expPanel" defaultExpanded={true}>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
@@ -40,6 +41,7 @@ const Filters = () => {
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
                 </ListGroup.Item>
+                {/* Filter Delivery type */}
                 <ListGroup.Item className="listGroupItem">
                     <ExpansionPanel className="expPanel" defaultExpanded={true}>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
@@ -57,12 +59,13 @@ const Filters = () => {
                                     <FormControlLabel value="Mailed Material" control={<Radio color="primary" />} label="Mailed Material" />
                                 </RadioGroup>
                                 <div className="vMore">
-                                    view more
+                                    View more
                                 </div>
                             </FormControl>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
                 </ListGroup.Item>
+                {/* Filter Subject area */}
                 <ListGroup.Item className="listGroupItem">
                     <ExpansionPanel className="expPanel" defaultExpanded={true}>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
@@ -80,7 +83,7 @@ const Filters = () => {
                                     <FormControlLabel value="Domestic Violence" control={<Radio color="primary" />} label="Domestic Violence" />
                                 </RadioGroup>
                                 <div className="vMore">
-                                    view more
+                                    View more
                                 </div>
                             </FormControl>
                         </ExpansionPanelDetails>

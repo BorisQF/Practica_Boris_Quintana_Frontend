@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Row, Col, Dropdown } from 'react-bootstrap';
 import Typography from '@material-ui/core/Typography';
 import Pagination from "react-js-pagination";
+import PropTypes from 'prop-types';
 import CourseDetails from './CourseDetails';
 import CourseFeatured from './CourseFeatured';
 import './styless.css';
 
-
+//CoursesList Component
 class CoursesList extends Component {
 
     constructor(props){
@@ -19,24 +20,32 @@ class CoursesList extends Component {
             activePage: 1
         }
     }
-
+    
     componentDidMount(){ 
         this.updateCourseFeatured();
         this.updateCourseDetails();
     }
+
 
     componentDidUpdate = (prevProps, prevState) => {
         if(prevProps.courseSearch !== this.props.courseSearch || prevState.activePage !== this.state.activePage){
             
             this.setState({coursesDatailsJson:null,
                             coursesFeaturedJson: null,
-                            activePage: 1
                         });
+
+            if(prevProps.courseSearch !== this.props.courseSearch){
+                this.setState({
+                    activePage: 1
+                }); 
+            }
+
             this.updateCourseFeatured();
             this.updateCourseDetails();            
         }
     }
 
+    //Get Course Featured list
     updateCourseFeatured = () => {
         fetch(`https://api.cebroker.com/v2/featuredCoursesProfession?profession=36`)
         .then((coursesFeatured) => coursesFeatured.json())
@@ -48,6 +57,7 @@ class CoursesList extends Component {
         .catch(err => console.log(err));
     }
 
+    //Get list of courses
     updateCourseDetails = () => {
         fetch(`https://api.cebroker.com/v2/search/courses/?expand=totalItems&pageIndex=${this.state.activePage}&pageSize=10&sortField=RELEVANCE&profession=36&courseType=CD_ANYTIME&sortShufflingSeed=27&courseName=${this.props.courseSearch}`)
         .then((coursesDatails) => coursesDatails.json())
@@ -59,6 +69,7 @@ class CoursesList extends Component {
         .catch(err => console.log(err));
     }
 
+    //Render a list of courses featured
     mapCourseFeatured = (coursesFeatured) => (
         coursesFeatured.map( course =>{
             return ( <CourseFeatured 
@@ -72,6 +83,7 @@ class CoursesList extends Component {
         })
     );
 
+    //Render a list of courses 
     mapCourseDetails = (coursesDetails) => (
         coursesDetails.items.map( course =>{
             return ( <CourseDetails 
@@ -84,9 +96,9 @@ class CoursesList extends Component {
                 />);
         })
     );
-
+    
+    //Get page number
     handlePageChange = (pageNumber) => {
-        console.log(`active page is ${pageNumber}`);
         this.setState({activePage: pageNumber});
     }
 
@@ -96,8 +108,9 @@ class CoursesList extends Component {
     return (
       <div>
         <Row className="rowResulsAndSorted">
+            {/* Render page number and result number  */}
             <Col sm={12} lg={5}>
-            <div className="divResult">{`Page ${activePage} of ${ coursesDatailsJson != null ? coursesDatailsJson.totalItems: '' } Results`}</div>
+                <div className="divResult">{`Page ${activePage} of ${ coursesDatailsJson != null ? coursesDatailsJson.totalItems: '' } Results`}</div>
             </Col>
             <Col sm={12} lg={{ span: 5, offset: 2 }}>
                 <Row className="justify-content-md-center">
@@ -122,31 +135,34 @@ class CoursesList extends Component {
             </Col>
         </Row>
         <Row>
+            {/* Render a list of courses featured */}
             <Col sm={12}>
-                {/* <CourseFeatured /> */}
                 { coursesFeaturedJson != null ? this.mapCourseFeatured(coursesFeaturedJson) : null}
             </Col>
         </Row>
         <Row>
+            {/* Render a listo of courses */}
             <Col sm={12}>
-                {/* <CourseDetails /> */}
                 { coursesDatailsJson != null ? this.mapCourseDetails(coursesDatailsJson) : null}
-                { coursesDatailsJson != null ? 
-                    <div>
-                        <Pagination
-                        activePage={this.state.activePage}
-                        itemsCountPerPage={10}
-                        totalItemsCount={this.state.coursesDatailsJson != null ? this.state.coursesDatailsJson.totalItems: 0 }
-                        pageRangeDisplayed={5}
-                        onChange={this.handlePageChange}
-                        />
-                    </div>
-                    : null}                
+                {/* Render pagination component */}
+                { <div>
+                    <Pagination
+                    activePage={this.state.activePage}
+                    itemsCountPerPage={10}
+                    totalItemsCount={this.state.coursesDatailsJson != null ? this.state.coursesDatailsJson.totalItems: 0 }
+                    pageRangeDisplayed={5}
+                    onChange={this.handlePageChange}
+                    />
+                </div> }
             </Col>
         </Row>
       </div>
     )
   }
+}
+
+CoursesList.propTypes = {
+    courseSearch: PropTypes.string.isRequired,
 }
 
 export default CoursesList;

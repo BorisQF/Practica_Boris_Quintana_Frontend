@@ -8,8 +8,7 @@ import laptop from './../../../assets/laptop.png';
 import share from './../../../assets/share.png';
 import './styless.css';
 
-const hola = '888.88';
-
+//Course Featured component
 const CourseFeatured = ({name, totalHours, price, featuredBanner, providerName}) => {
   return (
     <Paper className="coursePaper">
@@ -47,6 +46,11 @@ const CourseFeatured = ({name, totalHours, price, featuredBanner, providerName})
 }
 
 CourseFeatured.propTypes = {
+  name: PropTypes.string.isRequired,
+  totalHours: PropTypes.number.isRequired,
+  price: PropTypes.number,
+  featuredBanner: PropTypes.string.isRequired,
+  providerName: PropTypes.string.isRequired,
 
 }
 

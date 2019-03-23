@@ -5,7 +5,7 @@ import Filters from './Filters';
 import CoursesList from './CoursesList';
 import './styless.css';
 
-
+// CoursesContainer Componente
 const CoursesContainer = ({courseSearch}) => {
 
     return (
@@ -29,11 +29,13 @@ const CoursesContainer = ({courseSearch}) => {
                       <Col sm={12} lg={{ span: 10, offset: 1 }}>
                         <Row>
                           <Col sm={12} lg={3}>
+                          {/* Filter Courses Results component */}
                             <div>
                               <Filters></Filters>
                             </div>
                           </Col>
                           <Col sm={12} lg={7}>
+                          {/*  CoursesList component, Search results */}
                             <div className="cardMargin">
                               { courseSearch != null ? <CoursesList courseSearch={courseSearch} /> : <CoursesList courseSearch={' '} /> }
                             </div>
@@ -52,6 +54,9 @@ const CoursesContainer = ({courseSearch}) => {
     )
   }
 
+  CoursesContainer.propTypes = {
+    courseSearch: PropTypes.string,
+  }
 
 
 export default CoursesContainer;
