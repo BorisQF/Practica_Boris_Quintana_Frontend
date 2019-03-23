@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Dropdown } from 'react-bootstrap';
 import Typography from '@material-ui/core/Typography';
+import Pagination from "react-js-pagination";
 import CourseDetails from './CourseDetails';
 import CourseFeatured from './CourseFeatured';
 import './styless.css';
@@ -14,7 +15,8 @@ class CoursesList extends Component {
         this.state = {
             courseSearch,
             coursesFeaturedJson: null,
-            coursesDatailsJson: null
+            coursesDatailsJson: null,
+            activePage: 1
         }
     }
 
@@ -24,10 +26,11 @@ class CoursesList extends Component {
     }
 
     componentDidUpdate = (prevProps, prevState) => {
-        if(prevProps.courseSearch !== this.props.courseSearch){
+        if(prevProps.courseSearch !== this.props.courseSearch || prevState.activePage !== this.state.activePage){
             
             this.setState({coursesDatailsJson:null,
-                            coursesFeaturedJson: null
+                            coursesFeaturedJson: null,
+                            activePage: 1
                         });
             this.updateCourseFeatured();
             this.updateCourseDetails();            
@@ -46,7 +49,7 @@ class CoursesList extends Component {
     }
 
     updateCourseDetails = () => {
-        fetch(`https://api.cebroker.com/v2/search/courses/?expand=totalItems&pageIndex=1&pageSize=18&sortField=RELEVANCE&profession=36&courseType=CD_ANYTIME&sortShufflingSeed=27&courseName=${this.props.courseSearch}`)
+        fetch(`https://api.cebroker.com/v2/search/courses/?expand=totalItems&pageIndex=${this.state.activePage}&pageSize=10&sortField=RELEVANCE&profession=36&courseType=CD_ANYTIME&sortShufflingSeed=27&courseName=${this.props.courseSearch}`)
         .then((coursesDatails) => coursesDatails.json())
         .then(coursesDatailsJson => {
             this.setState({
@@ -82,14 +85,19 @@ class CoursesList extends Component {
         })
     );
 
+    handlePageChange = (pageNumber) => {
+        console.log(`active page is ${pageNumber}`);
+        this.setState({activePage: pageNumber});
+    }
+
 
   render() {
-      const { coursesFeaturedJson, coursesDatailsJson } = this.state;
+      const { coursesFeaturedJson, coursesDatailsJson, activePage } = this.state;
     return (
       <div>
         <Row className="rowResulsAndSorted">
             <Col sm={12} lg={5}>
-            <div className="divResult">{`Page 1 of ${ coursesDatailsJson != null ? coursesDatailsJson.totalItems: '' } Results`}</div>
+            <div className="divResult">{`Page ${activePage} of ${ coursesDatailsJson != null ? coursesDatailsJson.totalItems: '' } Results`}</div>
             </Col>
             <Col sm={12} lg={{ span: 5, offset: 2 }}>
                 <Row className="justify-content-md-center">
@@ -123,6 +131,17 @@ class CoursesList extends Component {
             <Col sm={12}>
                 {/* <CourseDetails /> */}
                 { coursesDatailsJson != null ? this.mapCourseDetails(coursesDatailsJson) : null}
+                { coursesDatailsJson != null ? 
+                    <div>
+                        <Pagination
+                        activePage={this.state.activePage}
+                        itemsCountPerPage={10}
+                        totalItemsCount={this.state.coursesDatailsJson != null ? this.state.coursesDatailsJson.totalItems: 0 }
+                        pageRangeDisplayed={5}
+                        onChange={this.handlePageChange}
+                        />
+                    </div>
+                    : null}                
             </Col>
         </Row>
       </div>

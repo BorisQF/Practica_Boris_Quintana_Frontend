@@ -35,7 +35,7 @@ const CoursesContainer = ({courseSearch}) => {
                           </Col>
                           <Col sm={12} lg={7}>
                             <div className="cardMargin">
-                              { courseSearch != null ? <CoursesList courseSearch={courseSearch} /> : null }
+                              { courseSearch != null ? <CoursesList courseSearch={courseSearch} /> : <CoursesList courseSearch={' '} /> }
                             </div>
                           </Col>
                         </Row>
