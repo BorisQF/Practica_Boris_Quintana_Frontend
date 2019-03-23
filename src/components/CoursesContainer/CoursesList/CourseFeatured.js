@@ -14,10 +14,10 @@ const CourseFeatured = ({name, totalHours, price, featuredBanner, providerName})
   return (
     <Paper className="coursePaper">
         <Row>
-            <Col sm={4}>
+            <Col sm={4} className="imgCol">
               <img src={`https://storage.cebroker.com/CEBroker/${featuredBanner}`} alt="imag" className="imgCourse"/>
             </Col>
-            <Col sm={5} className="colTitle">
+            <Col sm={5} className="colTitle colTitleMovil">
               <Typography className="courseTitle">
                 {name}
               </Typography>
@@ -32,13 +32,14 @@ const CourseFeatured = ({name, totalHours, price, featuredBanner, providerName})
                   <img src={laptop} alt="laptop" className="imgSize" /> {`Computer-Based Training`}
               </Typography>
             </Col>
-            <Col sm={3} className="colTitle">
-              <Typography className="titleCourse priceFont">
-                {price != null ? `$ ${price}` : `FREE`}
-              </Typography>
-              <Typography className="titleCourse priceFont">
-                <img src={share} alt="share" className="shareImg" />
-              </Typography>
+            <Col sm={3} className="colTitle flexRow">
+                <Typography className="titleCourse priceFont">
+                  {price != null ? `$ ${price}` : `FREE`}
+                </Typography>
+
+                <Typography className="titleCourse priceFont">
+                  <img src={share} alt="share" className="shareImg" />
+                </Typography>
             </Col>
         </Row>
     </Paper>

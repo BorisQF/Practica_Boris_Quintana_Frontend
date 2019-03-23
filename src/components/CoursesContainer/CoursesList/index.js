@@ -46,7 +46,7 @@ class CoursesList extends Component {
     }
 
     updateCourseDetails = () => {
-        fetch(`https://api.cebroker.com/v2/search/courses/?expand=totalItems&pageIndex=1&pageSize=10&sortField=RELEVANCE&profession=36&courseType=CD_ANYTIME&sortShufflingSeed=27&courseName=${this.props.courseSearch}`)
+        fetch(`https://api.cebroker.com/v2/search/courses/?expand=totalItems&pageIndex=1&pageSize=18&sortField=RELEVANCE&profession=36&courseType=CD_ANYTIME&sortShufflingSeed=27&courseName=${this.props.courseSearch}`)
         .then((coursesDatails) => coursesDatails.json())
         .then(coursesDatailsJson => {
             this.setState({

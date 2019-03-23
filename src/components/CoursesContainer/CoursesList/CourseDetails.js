@@ -24,7 +24,7 @@ const CourseFeatured = ({name, totalHours, price, deliveryMethod, providerName})
                   <img src={laptop} alt="laptop" className="imgSize" /> {deliveryMethod}
               </Typography>
             </Col>
-            <Col sm={3} className="colTitle">
+            <Col sm={3} className="colTitle flexRow">
               <Typography className="titleCourse priceFont priceDetailFont">
                 {price != 0 ? `$ ${price}` : `FREE`}
               </Typography>

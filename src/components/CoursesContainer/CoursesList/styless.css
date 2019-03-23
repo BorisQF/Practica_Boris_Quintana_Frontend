@@ -39,7 +39,7 @@
 
 .imgCourse{
     width: 100%;
-    margin: 13px;
+    margin: 30px 13px 13px 13px;
     padding: auto;
 }
 
@@ -68,6 +68,7 @@
 
 .courseContent{
     margin-top: 6px !important;
+    font-size: 12px !important;
     color: #95b1b6 !important;
 }
 
@@ -78,7 +79,8 @@
 }
 
 .courseExtraInfo{
-    margin-top: 15px !important;
+    margin-top: 10px !important;
+    font-size: 12px !important;
 }
 
 .courseDetailExtraInfo{
@@ -109,6 +111,7 @@
     border: 1px solid gray;
     padding: 0 5px;
     border-radius: 5px;
+    width: 45px;
 }
 
 .shareDetailImg{
@@ -118,4 +121,31 @@
     border: 1px solid gray;
     padding: 0 5px;
     border-radius: 5px;
+    width: 45px;
 }
+
+
+@media only screen and (max-width: 575px) {
+    .shareImg{
+        margin-top: 0% !important;
+    }
+    
+    .shareDetailImg{
+        margin-top: 0% !important;
+    }
+
+    .flexRow{
+        display: flex;
+        flex-direction: row;
+        margin-left: 13px;
+    }
+
+    .colTitleMovil{
+        margin: 13px;
+    }
+
+    .imgCol{
+        width: 93%;
+    }
+
+  }
